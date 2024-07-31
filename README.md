@@ -86,5 +86,5 @@ The user interface is designed to be intuitive, accessible, and aesthetically pl
 
 ## Contact Information
 For any questions or further information, please contact:
-- Your Email: [ammarahmed1263@gmail.com](mailto:ammarahmed1263@gmail.com)
-- LinkedIn: [linkedin.com/in/ammar126](https://www.linkedin.com/in/ammar126)
+- **Email**: [ammarahmed1263@gmail.com](mailto:ammarahmed1263@gmail.com)
+- **LinkedIn**: [linkedin.com/in/ammar126](https://www.linkedin.com/in/ammar126)
