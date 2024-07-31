@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   Pressable
 } from 'react-native';
-import Swipeable from 'react-native-gesture-handler/Swipeable';
 import Icon from 'react-native-vector-icons/Feather';
 import {useDispatch} from 'react-redux';
 import {
@@ -25,18 +24,14 @@ interface taskItemProps {
 
 const TaskItem: FC<taskItemProps> = ({task, onLongPress, isActive, onEditPress}) => {
   const dispatch = useDispatch();
-  const SwipeableRef = useRef<Swipeable>(null);
 
   const handleEdit = () => {
-    console.log(':::::::::::::::::::set editing to true here:::::::::::::::::::::');
     onEditPress();
     dispatch(updateTask(task));
-    SwipeableRef.current?.close();
   };
 
   const handleDelete = (key: number) => {
     dispatch(deleteTask(key));
-    SwipeableRef.current?.close();
   };
 
   const handleToggleCompletion = (key: number) => {
@@ -74,7 +69,7 @@ const TaskItem: FC<taskItemProps> = ({task, onLongPress, isActive, onEditPress})
                 <TouchableOpacity style={styles.iconContainer} onPress={handleEdit}>
                   <Icon name='edit' color='#898989' size={25} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => handleDelete(task.key)}>
+                <TouchableOpacity onPress={() => handleDelete(task.key)} hitSlop={30} style={{zIndex: 3}}>
                   <Text style={styles.deleteText}>Delete</Text>
                 </TouchableOpacity>
             </View>
@@ -156,7 +151,6 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   deleteText: {
-    zIndex: 3,
     color: '#de3d3d',
     fontSize: 16,
     fontFamily: 'Jakarta-Medium'

@@ -1,4 +1,4 @@
-import {Dispatch, FC, SetStateAction, useEffect, useRef, useState} from 'react';
+import {Dispatch, FC, SetStateAction, useCallback, useEffect, useRef, useState} from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import {useDispatch} from 'react-redux';
 import BottomSheet, {BottomSheetView} from '@gorhom/bottom-sheet';
@@ -22,6 +22,7 @@ const CustomBottomSheets: FC<bottomSheetprops> = ({
     title: '',
     description: '',
   });
+  const [error, setError] = useState<string | null>(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,16 +34,39 @@ const CustomBottomSheets: FC<bottomSheetprops> = ({
     }
   }, [taskToEdit, isEditing]);
 
-  const handleSubmit = () => {
-    if (isEditing && taskToEdit) {
-      if (!areTasksEqual(taskToEdit, task)) {
-        dispatch(updateTask({...taskToEdit, ...task}));
+
+  const validTitle = useCallback((text: string) => {
+    let valid = true;
+      if (text === '') {
+        setError('Title is required');
+        valid = false;
       }
-    } else {
-      dispatch(addTask(task));
-    }
-    bottomSheetRef.current?.close();
+      return valid;
+  }, [])
+  
+  const handleSubmit = () => {
+    if (validTitle(task.title)) {
+      if (isEditing && taskToEdit) {
+        if (!areTasksEqual(taskToEdit, task)) {
+          dispatch(updateTask({...taskToEdit, ...task}));
+        }
+      } else {
+        dispatch(addTask(task));
+      }
+      bottomSheetRef.current?.close();
+    } 
   };
+
+  const handleTextChange = (text: string, property: string) => {
+    if (property === 'title') {
+      if (validTitle(text)) {
+        setError(null);
+      } else {
+        setError('Title is required')
+      }
+    }
+    setTask(prev => ({...prev, [property]: text}))
+  }
 
   return (
     <BottomSheet
@@ -66,17 +90,19 @@ const CustomBottomSheets: FC<bottomSheetprops> = ({
           label="Title"
           placeholder="e.g. Bake Cake"
           value={task.title}
-          onChangeText={text => setTask(prev => ({...prev, title: text}))}
+          onChangeText={text => handleTextChange(text, 'title')}
+          style={error ? styles.errorLabel: {}}
         />
+        {error !== null && <Text style={styles.errortext}>{error}</Text>}
         <LabelInput
-          label="Description"
+          label={isEditing ? "Description" :"Description(Optional)"}
           placeholder={`Ingredients\n1 Cup of Flour\n2 Eggs\nPacket of Baking Powder`}
           numberOfLines={6}
           multiline
           scrollEnabled
           textAlignVertical="top"
           value={task.description}
-          onChangeText={text => setTask(prev => ({...prev, description: text}))}
+          onChangeText={text => handleTextChange(text, 'description')}
         />
         <BottomSheetView
           style={{
@@ -117,5 +143,16 @@ const styles = StyleSheet.create({
     color: 'white',
     marginHorizontal: 15,
     marginVertical: 8,
+  },
+  errorLabel: {
+    borderWidth: 2,
+    borderColor: '#de3d3d' 
+  },
+  errortext: {
+    color: '#de3d3d',
+    fontFamily: 'Jakarta-Medium',
+    fontSize: 16,
+    marginBottom: 5,
+    marginStart: 5,
   },
 });

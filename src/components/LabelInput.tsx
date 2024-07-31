@@ -1,23 +1,35 @@
-import { BottomSheetTextInput } from "@gorhom/bottom-sheet";
-import { FC } from "react";
-import { Text, View, TextInputProps, StyleSheet } from "react-native";
+import {BottomSheetTextInput} from '@gorhom/bottom-sheet';
+import {FC} from 'react';
+import {
+  Text,
+  View,
+  TextInputProps,
+  StyleSheet,
+  StyleProp,
+  TextStyle,
+} from 'react-native';
 
-interface labelInputProps extends TextInputProps{
-  label: string
+interface labelInputProps extends TextInputProps {
+  label: string;
+  style?: StyleProp<TextStyle>;
 }
 
-const LabelInput: FC<labelInputProps> = ({label, ...props}) => {
+const LabelInput: FC<labelInputProps> = ({label, style, ...props}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
-      <BottomSheetTextInput placeholderTextColor='#e0e0e0' style={styles.input} {...props}/>
+      <BottomSheetTextInput
+        placeholderTextColor="#e0e0e0"
+        style={[styles.input, style]}
+        {...props}
+      />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 10
+    marginVertical: 10,
   },
   label: {
     fontFamily: 'Jakarta-Bold',
@@ -41,7 +53,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 2,
     elevation: 4,
-  }
+  },
 });
 
 export default LabelInput;

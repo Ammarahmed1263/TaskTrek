@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../redux/store';
 import TaskItem from './TaskItem';
 import {setTasks, Task} from '../redux/taskSlice';
-import {Dispatch, FC, SetStateAction, useState} from 'react';
+import {Dispatch, FC, SetStateAction, useCallback, useMemo, useState} from 'react';
 import CustomBottomSheets from './CustomBottomSheets';
 import LottieView from 'lottie-react-native';
 import TasksFilter from './TasksFilter';
@@ -28,12 +28,11 @@ const TaskContainer: FC<TaskContainerProps> = ({isEditing, setIsEditing}) => {
   };
 
   const handleEditPress = (task: Task) => {
-    console.log('selected task here: ', task);
     setSelectedTask(task);
     setIsEditing(true);
   };
 
-  const renderTask = ({item, drag, isActive}: RenderItemParams<Task>) => {
+  const renderTask = useCallback(({item, drag, isActive}: RenderItemParams<Task>) => {
     return (
       <TaskItem
         task={item}
@@ -42,19 +41,18 @@ const TaskContainer: FC<TaskContainerProps> = ({isEditing, setIsEditing}) => {
         onEditPress={() => handleEditPress(item)}
       />
     );
-  };
+  }, [tasks])
 
-  const filterTasks = (tasks: Task[], filter: string): Task[] => {
+  const filterTasks = useCallback((tasks: Task[], filter: string): Task[] => {
     if (filter == 'completed') {
       return tasks.filter(task => task.completed === true);
     } else if (filter == 'in-progress') {
       return tasks.filter(task => task.completed !== true);
     }
     return tasks; // No filter, return all tasks
-  };
+  }, [tasks, filter])
 
-  const filteredTasks = filterTasks(tasks, filter);
-  console.log('tasks after filteration:', filterTasks);
+  const filteredTasks = useMemo(() => filterTasks(tasks, filter), [tasks, filter]) ;
 
   return (
     <View style={styles.tasks}>
