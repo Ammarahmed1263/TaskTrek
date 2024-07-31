@@ -9,4 +9,7 @@
 # Add any project specific keep options here:
 
 # [react-native-background-fetch]
--keep class com.transistorsoft.rnbackgroundfetch.HeadlessTask { *; }
+-keep class com.transistorsoft.** { *; }
+-keep interface com.transistorsoft.** { *; }
+-keep class com.google.firebase.** { *; }
+-keep class io.notifee.** { *; }

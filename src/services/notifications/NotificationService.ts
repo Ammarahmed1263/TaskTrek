@@ -11,7 +11,7 @@ export async function onDisplayNotification(tasksLeft: number): Promise<void> {
   const channelId = await notifee.createChannel({
     id: 'default',
     name: 'Default Channel',
-    importance: AndroidImportance.DEFAULT
+    importance: AndroidImportance.HIGH
   });
 
   // Display a notification
@@ -20,11 +20,15 @@ export async function onDisplayNotification(tasksLeft: number): Promise<void> {
     body: `Just ${tasksLeft} tasks left to conquer today!`,
     android: {
       channelId,
+      sound: 'default',
       smallIcon: 'ic_launcher_round', // optional, defaults to 'ic_launcher'.
       // pressAction is needed if you want the notification to open the app when pressed
       pressAction: {
         id: 'default',
       },
     },
+    ios: {
+      sound: 'default'
+    }
   });
 }

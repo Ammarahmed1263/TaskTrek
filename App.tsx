@@ -6,14 +6,10 @@ import {
 import TaskContainer from './src/components/tasksContainer';
 import AppHeader from './src/components/AppHeader';
 import AddButton from './src/components/AddButton';
-import startBackgroundNotifications from './src/services/background/BackgroundService';
 
 function App(): React.JSX.Element {
   const [isEditing, setIsEditing] = useState(false);
 
-  useEffect(() => {
-    startBackgroundNotifications();
-  }, [])
   return (
     <>
       <StatusBar translucent backgroundColor="transparent" barStyle='light-content' />
