@@ -18,6 +18,7 @@
     "lottie-react-native": "^6.7.2",
     "react": "18.2.0",
     "react-native": "^0.74.3",
+    "react-native-background-fetch": "^4.2.5",
     "react-native-draggable-flatlist": "^4.0.1",
     "react-native-gesture-handler": "^2.17.1",
     "react-native-reanimated": "^3.14.0",
