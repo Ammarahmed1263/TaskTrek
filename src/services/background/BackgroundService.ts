@@ -6,7 +6,7 @@ export default function startBackgroundNotifications () {
   console.log('function started');
   BackgroundFetch.configure(
     {
-      minimumFetchInterval:  15 , // Fetch interval in minutes "5hours"
+      minimumFetchInterval:  4 * 60, // Fetch interval in minutes "4hours"
       stopOnTerminate: false,
       startOnBoot: true,
       enableHeadless: true,
