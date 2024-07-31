@@ -33,6 +33,9 @@ The app includes background notifications that encourage users by informing them
 ### Display Today's Date
 The app prominently displays today's date so if user doesn't know today's date he won't need to navigate elsewhere outside of the app.
 
+### Persistent Storage
+User tasks are stored persistently, ensuring that all tasks remain saved even after the app is closed and reopened.
+
 ### Encouraging Notifications
 - **Notification Title**: "You're On Fire!"
 - **Notification Description**: "Just {tasksLeft} tasks left to conquer today!"
