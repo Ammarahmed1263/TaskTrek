@@ -54,7 +54,9 @@ The user interface is designed to be intuitive, accessible, and aesthetically pl
 2. **Install Dependencies**:
     ```bash
     npm install
+    ```
     or
+    ```bash
     yarn install
     ```
 
@@ -62,17 +64,12 @@ The user interface is designed to be intuitive, accessible, and aesthetically pl
     ```bash
     npm run android   # For Android
     npm run ios       # For iOS
-    or
-    yarn run android
-    yarn run ios
     ```
-
-<!-- 4. **Build for Release**:
-    ```bash
-    npm run build
     or
-    yarn run build
-    ``` -->
+   ```bash
+    yarn run android  # For Android
+    yarn run ios      # For iOS
+    ```
 
 ## Additional Features
 
