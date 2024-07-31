@@ -81,10 +81,10 @@ The user interface is designed to be intuitive, accessible, and aesthetically pl
 
 
 ## Release APK
-- **APK Download Link**: [click to download](https://drive.google.com/file/d/1nE5kojN_ZWK0kMNKYTzaiqJQ3LjR6UnV/view?usp=drive_link)
+- **APK Download Link**: [Click to download](https://drive.google.com/file/d/16Er3nd9GR_ukKgUPpcYc-Ray9XIwQZ39/view?usp=drive_link)
 
 ## Contact Information
 For any questions or further information, please contact:
 - **Email**: [ammarahmed1263@gmail.com](mailto:ammarahmed1263@gmail.com)
 - **LinkedIn**: [linkedin.com/in/ammar126](https://www.linkedin.com/in/ammar126)
-- **Assets Drive**: [click me](https://drive.google.com/drive/folders/1nCnN_n4KhVcyTI1Wkf4OiZXsbs3zzk5P?usp=drive_link)
+- **Assets Drive**: [CLICK ME...](https://drive.google.com/drive/folders/1nCnN_n4KhVcyTI1Wkf4OiZXsbs3zzk5P?usp=drive_link)
