@@ -3,6 +3,11 @@
 ## Introduction
 This project is a mobile application developed using React Native for managing tasks. The app provides a basic task management system with added user-friendly features to enhance the task management experience.
 
+## ScreenShots
+<img src="https://drive.google.com/uc?export=view&id=1dlnaVGAFY9nVNNXOJDPr5lEWldH5dp_I" alt="Screenshot of the app" width="400" height="650">
+<img src="https://drive.google.com/uc?export=view&id=1nLWVa3hpQVyTc63vSqkdqgG5sj-smnv3" alt="Screenshot of the app" width="400" height="650">
+<img src="https://drive.google.com/uc?export=view&id=1nL6J7dQfIXnuUe-09DHf3Fjn31FIJ9Rj" alt="Screenshot of the app" width="400" height="650">
+
 ## Showcase
 <video width="640" height="480" controls>
   <source src="https://drive.google.com/uc?id=1nIpddBr7fra9eFe-6YFT2N3MHhmrBlW0" type="video/mp4">
@@ -82,9 +87,10 @@ The user interface is designed to be intuitive, accessible, and aesthetically pl
 
 
 ## Release APK
-- APK Donwload Link: [click to download](https://drive.google.com/file/d/1nE5kojN_ZWK0kMNKYTzaiqJQ3LjR6UnV/view?usp=drive_link)
+- **APK Download Link**: [click to download](https://drive.google.com/file/d/1nE5kojN_ZWK0kMNKYTzaiqJQ3LjR6UnV/view?usp=drive_link)
 
 ## Contact Information
 For any questions or further information, please contact:
 - **Email**: [ammarahmed1263@gmail.com](mailto:ammarahmed1263@gmail.com)
 - **LinkedIn**: [linkedin.com/in/ammar126](https://www.linkedin.com/in/ammar126)
+- **Assets Drive**: [click me](https://drive.google.com/drive/folders/1nCnN_n4KhVcyTI1Wkf4OiZXsbs3zzk5P?usp=drive_link)
