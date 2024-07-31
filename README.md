@@ -2,17 +2,15 @@
 
 ## Introduction
 This project is a mobile application developed using React Native for managing tasks. The app provides a basic task management system with added user-friendly features to enhance the task management experience.
+### [Watch app in action](https://drive.google.com/file/d/1nIpddBr7fra9eFe-6YFT2N3MHhmrBlW0/view?usp=drive_link)
 
-## Showcase
-<video width="400" height="650" controls>
-  <source src="https://drive.google.com/uc?export=view&id=1nIpddBr7fra9eFe-6YFT2N3MHhmrBlW0" type="video/mp4">
-  Your browser does not support the video tag. [Watch the video](https://drive.google.com/file/d/1nIpddBr7fra9eFe-6YFT2N3MHhmrBlW0/view?usp=drive_link)
-</video>
+
 
 ## ScreenShots
-<img src="https://drive.google.com/uc?export=view&id=1dlnaVGAFY9nVNNXOJDPr5lEWldH5dp_I" alt="Screenshot of the app" width="400" height="650">
-<img src="https://drive.google.com/uc?export=view&id=1nLWVa3hpQVyTc63vSqkdqgG5sj-smnv3" alt="Screenshot of the app" width="400" height="650">
-<img src="https://drive.google.com/uc?export=view&id=1nL6J7dQfIXnuUe-09DHf3Fjn31FIJ9Rj" alt="Screenshot of the app" width="400" height="650">
+<img src="https://drive.google.com/uc?export=view&id=1nUj_ffebjzrPJ3F2hyYl5MnhwMOjBGM4" alt="App notification" width="400" height="180">
+<img src="https://drive.google.com/uc?export=view&id=1dlnaVGAFY9nVNNXOJDPr5lEWldH5dp_I" alt="No tasks" width="400" height="650">
+<img src="https://drive.google.com/uc?export=view&id=1nLWVa3hpQVyTc63vSqkdqgG5sj-smnv3" alt="View tasks" width="400" height="650">
+<img src="https://drive.google.com/uc?export=view&id=1nL6J7dQfIXnuUe-09DHf3Fjn31FIJ9Rj" alt="Add task" width="400" height="650">
 
 ## Objective
 The main objective of this project is to create a todo list application with core functionalities like adding, deleting, editing, and reordering tasks using drag-and-drop. Additionally, it includes a personal enhancement feature to improve user experience.
